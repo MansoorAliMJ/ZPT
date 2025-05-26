@@ -24,9 +24,18 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav text-white">
-                        <li class="nav-item"><a class="nav-link text-white" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" asp-controller="Contact" asp-action="Index">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" asp-controller="Career" asp-action="Index">Career</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")"
+                               asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white @(ViewContext.RouteData.Values["controller"]?.ToString() == "Contact" ? "active" : "")"
+                               asp-controller="Contact" asp-action="Index">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white @(ViewContext.RouteData.Values["controller"]?.ToString() == "Career" ? "active" : "")"
+                               asp-controller="Career" asp-action="Index">Career</a>
+                        </li>
                     </ul>
 
                 </div>
