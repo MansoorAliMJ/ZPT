@@ -1,0 +1,208 @@
+﻿@model Career
+
+
+@{
+    ViewData["Title"] = "Careers";
+}
+
+<div class="text-center py-5 bg-black text-white">
+    <h1 class="display-4 fw-bold">Join the <span style="color: #ff7a18;">Future at <span style="background: linear-gradient(to right, #ff7a18, #af002d); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ZPE</span></span></h1>
+</div>
+
+@* @if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+} *@
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="modal fade text-black" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="successModalLabel">Success</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    @TempData["SuccessMessage"]
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+        };
+    </script>
+}
+
+
+<section class="text-center py-5 bg-light">
+    <div class="container text-black">
+        <h2 class="mb-3">Why Work With Us?</h2>
+        <p class="lead mb-5">At ZPE, we believe in pushing boundaries and building world-class tech that empowers the future. We're not just a team — we're a movement. Join us and be a part of something extraordinary.</p>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"><span class="me-2">💡</span>Cutting-edge Projects</h5>
+                        <p class="card-text">Work on innovative solutions that solve real-world problems using AI, Cloud, and modern WebTech.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"><span class="me-2">🎨</span>Freedom to Create</h5>
+                        <p class="card-text">Design your workday, your way. We trust you to deliver brilliance—wherever inspiration strikes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"><span class="me-2">🚀</span>Growth Culture</h5>
+                        <p class="card-text">Get mentored, attend workshops, and elevate your skills continuously.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="text-center py-5">
+    <div class="container text-black">
+        <h2 class="mb-4 text-warning">Open Positions</h2>
+        <div class="row justify-content-center">
+
+            @if (ViewBag.Message != null)
+            {
+                <div class="alert alert-success mt-2">@ViewBag.Message</div>
+            }
+            <div class="col-md-5 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-start">
+                        <h5 class="card-title text-dark">Software Developer</h5>
+                        <p>Build and scale powerful web apps using React, Node.js, and modern technologies.</p>
+                        <ul>
+                            <li>2+ years experience in JavaScript & web dev</li>
+                            <li>Experience with APIs, Git, and databases</li>
+                            <li>Bonus: Familiar with Azure or AWS</li>
+                        </ul>
+                        <!-- This button triggers the modal -->
+                        <button type="button" class="btn btn-warning mt-2" data-bs-toggle="modal" data-bs-target="#jobModal">
+                            Apply Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-start">
+                        <h5 class="card-title text-dark">UI/UX Designer</h5>
+                        <p>Design beautiful, user-friendly interfaces and experiences that leave a lasting impression.</p>
+                        <ul>
+                            <li>1–3 years experience in UI/UX design</li>
+                            <li>Expertise in Figma or Adobe XD</li>
+                            <li>Strong understanding of design systems</li>
+                        </ul>
+                        <!-- This button triggers the modal -->
+                        <button type="button" class="btn btn-warning mt-2" data-bs-toggle="modal" data-bs-target="#jobModal">
+                            Apply Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 text-white" style="background: linear-gradient(to right, #ff7a18, #af002d);">
+    <div class="container text-center">
+        <h2 class="mb-3">Ready to Shape the Future?</h2>
+        <p class="lead">We're always looking for passionate, talented individuals. Let's build something awesome together.</p>
+        <a href="/Contact" class="btn btn-light mt-2">Contact Us</a>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade text-black" id="jobModal" tabindex="-1" aria-labelledby="jobModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content position-relative">
+            <!-- Loader inside modal -->
+            <div id="modalLoader" style="display: none;" class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-white bg-opacity-75">
+                <div class="spinner-border text-primary" role="status" style="display: none;" id="loader-spin">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="jobModalLabel">Job Application</h5>
+            </div>
+            <div class="modal-body">
+
+         
+
+                <form id="careerForm" asp-action="Index" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label"></label>
+                        <input asp-for="Name" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control" type="email" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Position" class="form-label"></label>
+                        <input asp-for="Position" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Resume</label>
+                        <input type="file" name="resume" class="form-control" required />
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Submit Application</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const form = document.querySelector("#careerForm"); // or use form ID
+        const loader = document.getElementById("modalLoader");
+        const loaderSpin = document.getElementById("loader-spin");
+
+        form.addEventListener("submit", function () {
+            loader.style.display = "flex"; // show loader
+            loaderSpin.style.display = "flex"; // show loader
+
+        });
+
+        // Optional: if you need to hide loader on window load
+        window.addEventListener("load", function () {
+            loader.style.display = "none";
+            loaderSpin.style.display = "none";
+        });
+    </script>
+}
+
+
+
+

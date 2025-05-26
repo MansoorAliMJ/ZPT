@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- Bootstrap 5 and Animate.css -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+
+<div class="hero ">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Left Side: Text -->
+            <div class="col-md-6 text-start animate__animated animate__fadeInDown">
+                <h1 class="display-3 fw-bold text-glow mb-3">Empower Your Financial Future with ZPe</h1>
+                <p class="lead fs-4">Your Trusted Partner in the Digital Era</p>
+            </div>
+
+            <!-- Right Side: Image -->
+            <div class="col-md-6 text-center animate__animated animate__slideInRight">
+                <img src="~/images/3QR-machine.png" alt="ZPe Product" class="img-fluid hero-product-img" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section container">
+    <h1 class="mb-4 text-glow">Behind the Brand</h1>
+    <p class="text-white" style="font-size:25px">
+        ZPe is a trusted digital banking and payment service, offering secure fund transfers, ABC (Auto Banking Correspondent) access,
+        cash deposits, withdrawals, and more. Accessible in both rural and urban areas, we simplify banking with reliability and ease.
+    </p>
+</div>
+
+<div class="section bg-light-custom container">
+    <div>
+        <h1 class="mb-4 fw-bold">Seamless Solutions for a Tech-Driven Financial Journey</h1>
+        <p style="font-size:25px">
+            We're a top financial services provider for the digital age, committed to simplifying and securing banking for all.
+        </p>
+    </div>
+</div>
+
+<div class="section container">
+    <h2 class="mb-5 text-center text-glow">Our Products</h2>
+    <div class="row g-4">
+        @for (int i = 1; i <= 6; i++)
+        {
+            <div class="col-md-4 animate-slide" style="animation-delay: @(i * 0.2)s;">
+                <div class="product-card">
+                    <img src="~/images/product@(i).png" alt="Product @i" class="product-image" />
+                    <div class="p-3 text-start">
+                        @switch (i)
+                        {
+                            case 1:
+                                @:<h5 class="fw-bold">QR 17 Machine (100 Note Deposit)</h5>
+                                @:<p>Seamless cash deposit functionality with 100-note capacity. Ideal for retailers, agents, and businesses needing frequent deposits. Highest Commission on Transactions, Real-time Deposit Recognition, Annual Business Process Updates</p>
+                                break;
+                            case 2:
+                                @:<h5 class="fw-bold">Zpe Facilities Kit (QR 8)</h5>
+                                @:<p>Complete ZPE infrastructure setup ideal for new ABC installations. Includes lighting, security, branding, and essential hardware. Highest Commission, Updated Business Processes, Integrated QR 8</p>
+                                break;
+                            case 3:
+                                @:<h5 class="fw-bold">Aqpe Mobile Banking App</h5>
+                                @:<p>Aqpe redefines mobile banking with a secure platform for wallets, transfers, bills, and more. Wallet Management, Quick Transfers, Zpe Integration</p>
+                                break;
+                            case 4:
+                                @:<h5 class="fw-bold">PREMIUM POINT</h5>
+                                @:<p>All-in-one setup with QR withdrawals, manual deposit, modern design. Tailored for business hubs. QR Withdrawals, ABC Ceiling Lights, Branding Tools</p>
+                                break;
+                            case 5:
+                                @:<h5 class="fw-bold">PREMIUM ZON</h5>
+                                @:<p>Complete ZPE facility with branding, QR withdrawals, manual deposit, premium environment. QR Fast Withdrawals, Branding Boards</p>
+                                break;
+                            case 6:
+                                @:<h5 class="fw-bold">PREMIUM ELITE</h5>
+                                @:<p>Elite facility setup with QR, deposit features, lighting, and pro branding. For elite agents and centers. Fast Withdrawals, ABC Lights, Premium Store Setup</p>
+                                break;
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

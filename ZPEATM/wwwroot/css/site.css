@@ -1,0 +1,116 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* wwwroot/css/site.css */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f0f3f5;
+    scroll-behavior: smooth;
+}
+
+.hero {
+   /* background: linear-gradient(to right, #ff416c, #ff4b2b);*/
+    color: white;
+    padding: 100px 20px;
+/*    box-shadow: 0 0 20px rgba(255, 75, 43, 0.5);*/
+}
+.img-fluid{
+    height:500px !important;
+}
+
+.hero-product-img {
+    max-width: 100%;
+    transform: scale(1.1);
+    transition: transform 0.4s ease;
+    height: 500px !important;
+}
+
+    .hero-product-img:hover {
+        transform: scale(1.2) rotate(1deg);
+    }
+
+
+
+.section {
+    padding: 70px 20px;
+}
+.text-glow {
+  /*  text-shadow: 0 0 6px #80ffdb, 0 0 14px #64dfdf, 0 0 20px #48bfe3;*/
+    color: #caf0f8;
+}
+
+.product-card {
+    background: linear-gradient(145deg, #1e1e2f, #292942);
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    overflow: hidden;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    }
+
+.product-image {
+    height: 250px;
+    border-radius: 18px 18px 0 0;
+    padding-top:5px
+}
+
+.product-card h5 {
+    color: #00e6e6;
+    margin-top: 15px;
+}
+
+.product-card p {
+    color: #d0d0f0;
+    font-size: 0.95rem;
+}
+
+.bg-light-custom {
+    background: linear-gradient(to right, #64c8ad, #99f2c8);
+    color: #0f2027;
+    padding: 60px 20px;
+    border-radius: 20px;
+}
+
+/* Slide-up animation with stagger effect */
+.animate-slide {
+    animation: slideUp 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
